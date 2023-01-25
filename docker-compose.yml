@@ -1,0 +1,36 @@
+version: '1'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile_nginx
+    ports:
+      - "80:80"
+    links:
+      - express1
+      - express2
+  express1:
+    container_name: express1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["yarn", "start"]
+    image: express:latest
+    ports:
+      - 3001:3000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+  express2:
+    container_name: express2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["yarn", "start"]
+    image: express:latest
+    ports:
+      - 3001:3000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+  
