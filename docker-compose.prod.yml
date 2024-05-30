@@ -1,0 +1,145 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: DockerFile_nginx
+    ports:
+      - "80:80"
+    links:
+      - dm_pdf_gen_1
+      - dm_pdf_gen_2
+      - dm_pdf_gen_3
+      - dm_pdf_gen_4
+      - dm_pdf_gen_5
+      - dm_pdf_gen_6
+      - dm_pdf_gen_7
+      - dm_pdf_gen_8
+      - dm_pdf_gen_9
+      - dm_pdf_gen_10
+  dm_pdf_gen_1:
+    container_name: dm_pdf_gen_1
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_1:latest
+    ports:
+      - 4001:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+  dm_pdf_gen_2:
+    container_name: dm_pdf_gen_2
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_2:latest
+    ports:
+      - 4002:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+  dm_pdf_gen_3:
+    container_name: dm_pdf_gen_3
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_2:latest
+    ports:
+      - 4003:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+  dm_pdf_gen_4:
+    container_name: dm_pdf_gen_4
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_2:latest
+    ports:
+      - 4004:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+  dm_pdf_gen_5:
+    container_name: dm_pdf_gen_5
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_5:latest
+    ports:
+      - 4005:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+
+  dm_pdf_gen_6:
+    container_name: dm_pdf_gen_6
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_6:latest
+    ports:
+      - 4006:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+
+  dm_pdf_gen_7:
+    container_name: dm_pdf_gen_7
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_7:latest
+    ports:
+      - 4007:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+
+  dm_pdf_gen_8:
+    container_name: dm_pdf_gen_8
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_8:latest
+    ports:
+      - 4008:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+
+  dm_pdf_gen_9:
+    container_name: dm_pdf_gen_9
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_9:latest
+    ports:
+      - 4009:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+
+  dm_pdf_gen_10:
+    container_name: dm_pdf_gen_10
+    build:
+      context: .
+      dockerfile: DockerFile_app
+    command: ["yarn", "start"]
+    image: dm_pdf_gen_10:latest
+    ports:
+      - 4010:4000
+    volumes:
+     - .:/usr/src/app
+    restart: on-failure
+
